@@ -55,23 +55,23 @@
     </script>
 
     <script>
-      jQuery(document).ready(function( $ ) {
+      jQuery(document).ready(function ($) {
         if (window.PublicKeyCredential) {
           window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
             .then((available) => {
               if (available) {
-                $('#webAuthN').html("Supported.")
+                $("#webAuthN").html("Supported.")
               } else {
-                $('#webAuthN').html(
+                $("#webAuthN").html(
                   "WebAuthn supported, Platform Authenticator *not* supported."
                 )
               }
             })
-            .catch((err) => $('#webAuthN').html("Something went wrong."))
+            .catch((err) => $("#webAuthN").html("Something went wrong."))
         } else {
-          $('#webAuthN').html("Not supported.")
+          $("#webAuthN").html("Not supported.")
         }
-      }
+      })
     </script>
   </head>
 
