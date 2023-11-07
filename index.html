@@ -53,26 +53,6 @@
         })
       })
     </script>
-
-    <script>
-      jQuery(document).ready(function ($) {
-        if (window.PublicKeyCredential) {
-          window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
-            .then((available) => {
-              if (available) {
-                $("#webAuthN").html("Supported.")
-              } else {
-                $("#webAuthN").html(
-                  "WebAuthn supported, Platform Authenticator *not* supported."
-                )
-              }
-            })
-            .catch((err) => $("#webAuthN").html("Something went wrong."))
-        } else {
-          $("#webAuthN").html("Not supported.")
-        }
-      })
-    </script>
   </head>
 
   <body>
